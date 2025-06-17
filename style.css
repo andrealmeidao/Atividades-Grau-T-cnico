@@ -1,0 +1,355 @@
+/* Reset e base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #0066cc;
+}
+
+/* Banner */
+section.banner {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 40px;
+}
+
+section.banner h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+section.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section.banner button {
+    background-color: blue;
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+section.banner button:hover,
+section.banner button:focus {
+    background-color: #004aad;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 255, 0.7);
+}
+
+/* Destaques */
+section.destaques {
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.produtos-destaque img {
+    width: 250px;
+    height: auto;
+    margin: 0 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.produtos-destaque img:hover {
+    transform: scale(1.05);
+}
+
+/* Categorias */
+section.categoria {
+    padding: 20px 40px;
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+section.categoria h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #222;
+}
+
+/* Produtos nas categorias */
+section.categoria .produto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+section.categoria .produto:last-child {
+    border-bottom: none;
+}
+
+section.categoria .produto img {
+    width: 200px;
+    height: auto;
+    margin-right: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+section.categoria .produto p {
+    font-size: 1.1rem;
+}
+
+/* Filtro de produtos */
+.categoria > div:first-child {
+    margin-bottom: 30px;
+}
+
+#filtro-produto {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 1.5px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+#filtro-produto:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 5px #0066cc;
+}
+
+/* Formulário contato */
+form {
+    max-width: 500px;
+    margin: 20px auto 40px auto;
+    background: white;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+form input, form textarea {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1.5px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #0077ff;
+    outline: none;
+    box-shadow: 0 0 7px #0077ff;
+}
+
+form button {
+    background-color: #0077ff;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+form button:hover,
+form button:focus {
+    background-color: #005bbb;
+}
+
+/* Contato info */
+.contato-info {
+    max-width: 500px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.contato-info p {
+    margin: 8px 0;
+}
+
+/* iframe mapa */
+iframe {
+    display: block;
+    margin: 30px auto 60px auto;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+}
+
+/* Botão voltar topo */
+button#botaoTopo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #222;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+button#botaoTopo:hover,
+button#botaoTopo:focus {
+    background-color: #0077ff;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 10px 0 0 0;
+    }
+    section.categoria .produto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    section.categoria .produto img {
+        margin: 0 0 15px 0;
+    }
+    form, .contato-info {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+footer {
+    background-color: #222; /* Um cinza escuro para o fundo do rodapé */
+    color: #f8f8f8; /* Cor do texto (um cinza bem claro, quase branco) */
+    padding: 30px 20px; /* Espaçamento interno superior/inferior de 30px e lateral de 20px */
+    text-align: center; /* Centraliza o texto dentro do rodapé */
+    margin-top: 50px; /* Adiciona um espaço de 50px entre o conteúdo principal e o rodapé */
+    border-top: 1px solid #333; /* Uma linha fina na parte superior para separação */
+}
+
+/* Estilos para os parágrafos dentro do rodapé */
+footer p {
+    margin: 5px 0; /* Pequena margem superior e inferior para espaçar os parágrafos */
+    font-size: 0.9em; /* Torna o tamanho da fonte um pouco menor que o padrão */
+    line-height: 1.6; /* Aumenta a altura da linha para melhor legibilidade */
+}
+
+/* Estilos para os links dentro do rodapé */
+footer a {
+    color: #00bfff; /* Uma cor azul vibrante para os links (pode ser ajustada) */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    transition: color 0.3s ease; /* Transição suave na cor ao passar o mouse */
+}
+
+/* Estilos para os links quando o mouse passa por cima (hover) */
+footer a:hover {
+    color: #87ceeb; /* Uma tonalidade mais clara do azul para o hover */
+    text-decoration: underline; /* Adiciona o sublinhado de volta ao passar o mouse */
+}
+
+/* Estilos para uma possível lista de links no rodapé (se você adicionar) */
+footer ul {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin: 15px 0; /* Espaço acima e abaixo da lista */
+    display: flex; /* Transforma a lista em flexbox para organizar os itens em linha */
+    justify-content: center; /* Centraliza os itens da lista */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+}
+
+footer ul li {
+    margin: 0 15px; /* Espaçamento entre os itens da lista */
+}
+
+/* Media Queries para responsividade (opcional, mas recomendado) */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 15px; /* Diminui o padding em telas menores */
+    }
+
+    footer ul {
+        flex-direction: column; /* Coloca os itens da lista em coluna em telas menores */
+    }
+
+    footer ul li {
+        margin: 5px 0; /* Ajusta a margem para itens em coluna */
+    }
+}
