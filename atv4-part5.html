@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade4-parte5</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jokenpô ⚔️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      text-align: center;
+      padding: 40px;
+    }
+    .game-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .options button {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .options button:hover {
+      background-color: #2980b9;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      min-height: 80px;
+    }
+    .score {
+      margin-top: 16px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .emoji {
+      font-size: 48px;
+      margin: 0 10px;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+    .emoji.animate {
+      transform: scale(1.3) rotate(15deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-container">
+    <h1>Jokenpô</h1>
+    <div class="options">
+      <button onclick="play('pedra')">🪨 Pedra</button>
+      <button onclick="play('papel')">📄 Papel</button>
+      <button onclick="play('tesoura')">✂️ Tesoura</button>
+    </div>
+    <div class="result" id="result">Faça sua escolha!</div>
+    <div class="score" id="score">Sua Pontuação: 0</div>
+    <audio id="sound-win" src="https://www.soundjay.com/human/applause-8.mp3"></audio>
+    <audio id="sound-lose" src="https://www.soundjay.com/human/sad-trombone-01.mp3"></audio>
+  </div>
+
+  <script>
+    let score = 0;
+    const resultDiv = document.getElementById('result');
+    const scoreDiv = document.getElementById('score');
+    const soundWin = document.getElementById('sound-win');
+    const soundLose = document.getElementById('sound-lose');
+
+    function play(userChoice) {
+      const choices = ['pedra', 'papel', 'tesoura'];
+      const aiChoice = choices[Math.floor(Math.random() * 3)];
+
+      const emojiMap = {
+        pedra: 'PedraPng',
+        papel: '📄',
+        tesoura: '✂️'
+      };
+
+      // Exibe escolhas
+      resultDiv.innerHTML = `
+        Você: <span class="emoji">${emojiMap[userChoice]}</span>
+        Máquina: <span class="emoji">${emojiMap[aiChoice]}</span>
+      `;
+
+      const userEmoji = resultDiv.querySelectorAll('.emoji')[0];
+      const aiEmoji   = resultDiv.querySelectorAll('.emoji')[1];
+      userEmoji.classList.add('animate');
+      aiEmoji.classList.add('animate');
+      setTimeout(() => {
+        userEmoji.classList.remove('animate');
+        aiEmoji.classList.remove('animate');
+      }, 500);
+
+      // Lógica de vitória
+      if (userChoice === aiChoice) {
+        resultDiv.innerHTML += '<br>🔄 Empate! Jogue novamente.';
+        return;
+      }
+
+      const winsAgainst = {
+        pedra: 'tesoura',
+        papel: 'pedra',
+        tesoura: 'papel'
+      };
+
+      if (winsAgainst[userChoice] === aiChoice) {
+        score++;
+        scoreDiv.innerText = `Sua Pontuação: ${score}`;
+        resultDiv.innerHTML += '<br>🎉 Você venceu esta rodada!';
+        soundWin.play();
+      } else {
+        resultDiv.innerHTML += '<br>💥 A Máquina venceu! Fim de jogo.';
+        soundLose.play();
+        // desabilita botões
+        document.querySelectorAll('.options button').forEach(b => b.disabled = true);
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
