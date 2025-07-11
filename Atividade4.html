@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificador de Faixa Etária</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Descubra sua faixa etária</h2>
+    <input type="number" id="anoNascimento" placeholder="Digite seu ano de nascimento">
+    <button onclick="verificarFaixaEtaria()">Verificar</button>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function verificarFaixaEtaria() {
+      const anoNascimento = parseInt(document.getElementById("anoNascimento").value);
+      const anoAtual = new Date().getFullYear();
+      const resultado = document.getElementById("resultado");
+
+      if (!anoNascimento || anoNascimento > anoAtual || anoNascimento < 1900) {
+        resultado.innerText = "❗Por favor, insira um ano de nascimento válido.";
+        resultado.style.color = "red";
+        return;
+      }
+
+      const idade = anoAtual - anoNascimento;
+      let faixa = "";
+      
+      if (idade <= 12) {
+        faixa = "👶 Criança";
+      } else if (idade <= 17) {
+        faixa = "🧒 Jovem";
+      } else if (idade <= 59) {
+        faixa = "🧑 Adulto";
+      } else {
+        faixa = "👴 Idoso";
+      }
+
+      resultado.innerText = `Você tem ${idade} anos e é classificado como: ${faixa}.`;
+      resultado.style.color = "green";
+    }
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
