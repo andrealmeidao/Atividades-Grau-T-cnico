@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade4-pt2</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Descubra a Estação do Ano</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e0f7fa;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Qual é a estação do ano?</h2>
+    <input type="number" id="mes" placeholder="Informe o número do mês (1 a 12)" min="1" max="12">
+    <button onclick="descobrirEstacao()">Descobrir Estação</button>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function descobrirEstacao() {
+      const mes = parseInt(document.getElementById("mes").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(mes) || mes < 1 || mes > 12) {
+        resultado.innerText = "❗Digite um número de mês válido entre 1 e 12.";
+        resultado.style.color = "red";
+        return;
+      }
+
+      let estacao = "";
+      
+      if (mes >= 3 && mes <= 5) {
+        estacao = " Outono";
+      } else if (mes >= 6 && mes <= 8) {
+        estacao = "❄️ Inverno";
+      } else if (mes >= 9 && mes <= 11) {
+        estacao = " Primavera";
+      } else {
+        estacao = " Verão";
+      }
+
+      resultado.innerText = `A estação correspondente ao mês ${mes} é: ${estacao}`;
+      resultado.style.color = "green";
+    }
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
